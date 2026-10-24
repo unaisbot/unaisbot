@@ -1,8 +1,8 @@
 title: "unais.bot"
 tagline: "The Alien Ecology"
 description: "Exploring biodiversity, ecology, invasive species, and the natural world through science, stories and visuals."
-url: "https://www.unaisbot.in"
-baseurl: ""
+url: "https://unaisbot.github.io"
+baseurl: "/unaisbot"
 lang: en
 timezone: Asia/Kolkata
 markdown: kramdown
