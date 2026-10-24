@@ -1,0 +1,31 @@
+title: "unais.bot"
+tagline: "The Alien Ecology"
+description: "Exploring biodiversity, ecology, invasive species, and the natural world through science, stories and visuals."
+url: "https://www.unaisbot.in"
+baseurl: ""
+lang: en
+timezone: Asia/Kolkata
+markdown: kramdown
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+collections:
+  pages:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      image: /assets/images/default-article.jpg
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

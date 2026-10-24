@@ -1,0 +1,44 @@
+---
+layout: default
+title: Home
+description: Exploring biodiversity, ecology, and the ways science can help us understand and protect our natural world.
+---
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">THE ALIEN ECOLOGY</p>
+    <h1>unais.bot</h1>
+    <p class="hero-subtitle">The Alien Ecology</p>
+    <p class="hero-description">Exploring biodiversity, invasive species, ecology and the natural world through science, stories and visuals.</p>
+    <a class="button" href="{{ '/blog/' | relative_url }}">Explore the latest articles <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <div><p class="eyebrow">FIELD NOTES & IDEAS</p><h2>Latest articles</h2><p class="muted">Stories, science and observations from the living world.</p></div>
+    <a class="text-link" href="{{ '/blog/' | relative_url }}">View all posts →</a>
+  </div>
+  <div class="article-grid">
+    {% for post in site.posts limit: 6 %}
+    <article class="article-card">
+      <a class="card-image-link" href="{{ post.url | relative_url }}">
+        {% if post.image %}<img class="card-image" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}" loading="lazy">{% endif %}
+      </a>
+      <div class="card-content">
+        {% if post.categories.size > 0 %}<p class="category">{{ post.categories | first }}</p>{% endif %}
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 155 }}</p>
+        <div class="card-footer"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time><a href="{{ post.url | relative_url }}">Read more →</a></div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% unless site.posts.size > 0 %}
+  <div class="migration-note"><strong>Migration workspace ready.</strong><p>Your original articles and images still need to be transferred from Google Sites. Add each article as a Markdown file in <code>_posts/</code> and place its images in <code>assets/images/</code>. See README.md for the next steps.</p></div>
+  {% endunless %}
+</section>
+
+<section class="about-strip">
+  <div><p class="eyebrow">SCIENCE • STORIES • BIODIVERSITY</p><h2>Looking closer at the natural world.</h2><p>Exploring nature's hidden stories, from ecological processes to the quiet lives of overlooked organisms.</p></div>
+  <a class="button button-outline" href="{{ '/about/' | relative_url }}">About unais.bot</a>
+</section>
